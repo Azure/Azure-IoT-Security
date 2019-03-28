@@ -1,0 +1,30 @@
+{
+  "moduleId": "azureiotsecurity",
+  "properties": {
+    "desired": {
+      "azureiot*com^securityAgentConfiguration^1*0*0": {
+        "highPriorityMessageFrequency": "PT7M",
+        "lowPriorityMessageFrequency": "PT5H",
+        "snapshotFrequency": "PT13H",
+        "maxLocalCacheSizeInBytes": 2560000,
+        "maxMessageSizeInBytes": 204800,
+        "eventPriorityConnectedHardware": "Low",
+        "eventPriorityListeningPorts":  "High",
+        "eventPriorityProcessCreate": "Low",
+        "eventPriorityProcessTerminate": "Low",
+        "eventPrioritySystemInformation": "Low",
+        "eventPriorityLocalUsers": "High",
+        "eventPriorityLogin": "High",
+        "eventPriorityConnectionCreate": "Low",
+        "eventPriorityFirewallConfiguration": "Low",
+        "eventPriorityOSBaseline": "Low",
+        "eventPriorityDiagnostic": "Low",
+        "eventPriorityConfigurationError": "Low",
+        "eventPriorityDroppedEventsStatistics": "Low",
+        "eventPriorityMessageStatistics": "Low"
+      }
+    }
+  }
+},
+
+

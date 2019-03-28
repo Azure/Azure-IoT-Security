@@ -1,0 +1,38 @@
+{
+  "title": "Security:ConnectedHardware",
+  "$id": "messageEventSecurityConnectedHardware_v1_0.json",
+
+  "type": "object",
+  "properties": {
+    "Category": {"enum": ["Periodic"]},
+    "Name" : {"enum": ["ConnectedHardware"]},
+    "EventType": {"enum": ["Security"]},
+    "PayloadSchemaVersion": {"enum": ["1.0"]},
+    "Payload": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "HardwareCategory": {
+            "description": "Hardware device category",
+            "type": "string",
+            "examples": ["Multimedia", "CD-ROM", "Sound Device", "Display", "Infrared", "Input", "Modem", "Network", "Printing", "USB"]
+          },
+          "HardwareSubCategory": {
+            "description": "Hardware device sub-category",
+            "type": "string",
+            "examples": ["Audio Codecs", "Video Codecs", "Keyboard", "Pointing Device", "Adapter"]
+          },
+          "HardwareName": {
+            "description": "Hardware device name",
+            "type": "string",
+            "examples": ["Realtek High Definition Audio", "Intel(R) HD Graphics 5500", "Microsoft Hardware USB Keyboard", "Intel(R) USB 3.0 eXtensible Host Controller - 1.0 (Microsoft)"]
+          },
+          "ExtraDetails": { "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" }
+        },
+        "additionalProperties": false,
+        "required": ["HardwareCategory", "HardwareSubCategory", "HardwareName"]
+      }
+    }
+  }
+}

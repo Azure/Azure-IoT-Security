@@ -1,0 +1,45 @@
+{
+  "title": "Security:Baseline",
+  "$id": "messageEventSecurityOSBaseline_v1_0.json",
+
+  "type": "object",
+  "properties": {
+    "Category": {"enum": ["Periodic"]},
+    "Name" : {"enum": ["OSBaseline"]},
+    "EventType": {"enum": ["Security"]},
+    "PayloadSchemaVersion": {"enum": ["1.0"]},
+    "Payload": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Description": {
+            "description": "The decription of the baseline rule",
+            "type": "string"
+          },
+          "CceId": {
+            "description": "The cce id of the rule",
+            "type": "string"
+          },
+          "Result": {
+            "description": "The result of the rule, Pass if the rule passed, Fail if the rule failed, Err if there was an error while trying to run the rule",
+            "type": "string",
+            "enum": ["Pass", "Fail", "Err"]
+          },
+          "Error": {
+            "description": "The error message",
+            "type": "string"
+          },
+          "Severity": {
+            "description": "The severity of the problem",
+            "type": "string",
+            "enum": ["Critical", "Important", "Warning", "Informational"]
+          },
+          "ExtraDetails": { "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" }
+        },
+        "additionalProperties": false,
+        "required": ["Description", "CceId", "Result", "Error", "Severity"]
+      }
+    }
+  }
+}

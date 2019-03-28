@@ -1,0 +1,72 @@
+{
+  "description": "Custom type definitions",
+  "$id": "messageEventTypeDefinitions_v1_0.json",
+
+  "extradetails": {
+    "description": "A map of string: string",
+    "type": "object",
+    "additionalProperties": { "type": "string" }
+  },
+  "processid": {
+    "description": "A process id",
+    "type": "integer",
+    "examples": [6052, 20472]
+  },
+  "threadid": {
+    "description": "A thread id",
+    "type": "integer",
+    "examples": [6052, 20472]
+  },
+  "username": {
+    "description": "The name of a local identity",
+    "type": "string",
+    "examples": ["CONTOSO$", "user"]
+  },
+  "userid": {
+    "description": "The id of a local identity",
+    "type": "string",
+    "examples": ["1034", "S-1-5-21-1930821513-3446634871-2947352817-503"]
+  },
+  "executable": {
+    "description": "A full path an executable",
+    "type": "string",
+    "examples": ["C:\\windows\\system32\\cscript.exe", "/usr/sbin/lightdm"]
+  },
+ "ip": { 
+	"oneOf": [
+		{
+			"description": "An IPv4 address",
+			"type": "string",
+			"format": "ipv4",
+			"examples": ["10.228.100.167"]
+		},
+		{
+			"description": "An IPv6 address",
+			"type": "string",
+			"format": "ipv6",
+			"examples": ["::ffff:c000:0280"]
+		}
+	] 
+},
+  "iptag": {
+    "description": "An IPv4 address or tag",
+    "type": "string",
+    "examples": ["10.228.100.167", "Local subnet", "10.228.100.167/27", "10.228.100.167-10.228.101.167", "10.228.100.167/10.101.10.10"]
+  },
+  "port": {
+    "description": "An IPv4 port",
+    "type": "string",
+    "examples": ["53248", "53248-53250", "*", "22,53"]
+  },
+  "protocol": {
+    "description": "An IP protocol",
+    "type": "string",
+    "examples": ["TCP", "UDP", "ICMP"]
+  },
+  "direction": {
+    "description": "A connection direction",
+    "type": "string",
+    "enum": ["In", "Out"]
+  }
+}
+

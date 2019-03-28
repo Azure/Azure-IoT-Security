@@ -1,0 +1,43 @@
+{
+    "title": "Security:Diagnostic",
+    "$id": "messageEventDiagnostic_v1_0.json",
+    "type": "object",
+    "properties": {
+      "Category": {"enum": ["Triggered"]},
+      "Name" : {"enum": ["Diagnostic"]},
+      "EventType": {"enum": ["Diagnostic"]},
+      "PayloadSchemaVersion": {"enum": ["1.0"]},
+      "Payload": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "CorrelationId": {
+              "description": "diagnostic message correlation id",
+              "$ref": "message_v1_0.json#/definitions/guid"
+            },
+            "Severity": {
+              "description": "The severity of the diagnostic event",
+              "type": "string",
+              "enum": ["Fatal", "Error", "Warning", "Information", "Debug"]
+            },
+            "Message": {
+              "description": "The message",
+              "type": "string"
+            },
+            "ProcessId": {
+              "description": "The Id of the process in which the event occured",
+              "$ref": "messageEventTypeDefinitions_v1_0.json#/processid"
+            },
+            "ThreadId": {
+              "description": "The Id of the thread in which the event occured",
+              "$ref": "messageEventTypeDefinitions_v1_0.json#/threadid"
+            },
+            "ExtraDetails": { "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" }
+          },
+          "additionalProperties": false,
+          "required": ["Severity", "Message", "ProcessId", "ThreadId"]
+        }
+      }
+    }
+  }

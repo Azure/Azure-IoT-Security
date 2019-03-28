@@ -1,0 +1,66 @@
+{
+  "title": "Security:SystemInformation",
+  "$id": "messageEventSecuritySystemInformation_v1_0.json",
+
+  "type": "object",
+  "properties": {
+    "Category": {"enum": ["Periodic"]},
+    "Name" : {"enum": ["SystemInformation"]},
+    "EventType": {"enum": ["Security"]},
+    "PayloadSchemaVersion": {"enum": ["1.0"]},
+    "Payload": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "OSName": {
+            "description": "The name of the OS",
+            "type": "string"
+          },
+          "OSVersion": {
+            "description": "The version of the OS",
+            "type": "string"
+          },
+          "OSVendor": {
+            "description": "The name of the OS vendor",
+            "type": "string"
+          },
+          "OsArchitecture": {
+            "description": "The Architecture of the OS",
+            "type": "string"
+          },
+          "HostName": {
+            "description": "The name host that the agent is running on",
+            "type": "string"
+          },
+          "BIOSVersion": {
+            "description": "The version of the BIOS",
+            "type": "string"
+          },
+          "BootDevice": {
+            "description": "The boot device",
+            "type": "string"
+          },
+          "TotalPhysicalMemoryInKB": {
+            "description": "The total amount of physical memory the system has installed",
+            "type": "integer"
+          },
+          "FreePhysicalMemoryInKB": {
+            "description": "The amount of physical memory that is currently free on the system",
+            "type": "integer"
+          },
+          "TotalVirtualMemoryInKB": {
+            "description": "The total amount of virtual memory the system has installed",
+            "type": "integer"
+          },
+          "FreeVirtualMemoryInKB": {
+            "description": "The amount of virtual memory that is currently free on the system",
+            "type": "integer"
+          },
+          "ExtraDetails": { "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

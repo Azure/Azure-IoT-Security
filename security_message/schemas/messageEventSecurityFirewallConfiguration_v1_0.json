@@ -1,0 +1,76 @@
+{
+  "title": "Security:FirewallConfiguration",
+  "$id": "messageEventSecurityFirewallConfiguration_v1_0.json",
+
+  "type": "object",
+  "properties": {
+    "Category": {"enum": ["Periodic"]},
+    "Name" : {"enum": ["FirewallConfiguration"]},
+    "EventType": {"enum": ["Security"]},
+    "PayloadSchemaVersion": {"enum": ["1.0"]},
+    "Payload": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Priority": {
+            "description": "Rule priority",
+            "type": "integer"
+          },
+          "Direction": {
+            "description": "Rule direction",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/direction"
+          },
+          "ChainName": {
+            "description": "Rule parent chain",
+            "type" : "string"
+          },
+          "Application": {
+            "description": "The application the rule applies to",
+            "type" : "string"
+          },
+          "Enabled": {
+            "description": "Is rule enabled",
+            "type": "boolean",
+            "default": true
+          },
+          "Action": {
+            "description": "Rule action. Other is used for special cases, details should be provided under ExtraDetails.",
+            "type": "string",
+            "enum": ["Allow", "Deny", "Other"]
+          },
+          "SourceAddress": {
+            "description": "Source IP address or tag",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/iptag"
+          },
+          "SourcePort": {
+            "description": "Source port",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/port"
+          },
+          "DestinationAddress": {
+            "description": "Destination IP address or tag",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/iptag"
+          },
+          "DestinationPort": {
+            "description": "Destination port",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/port"
+          },
+          "Protocol": {
+            "description": "Rule protocol",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/protocol"
+          },
+          "ExtraDetails": { "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" }
+        },
+        "additionalProperties": false,
+        "required": ["Enabled", "Action"],
+        "anyOf" : [ 
+         { "required" : ["SourceAddress"]},
+         { "required" : ["SourcePort"]}, 
+         { "required" : ["DestinationPort"]}, 
+         { "required" : ["DestinationAddress"]}, 
+         { "required" : ["Protocol"]}
+        ]
+      }
+    }
+  }
+}

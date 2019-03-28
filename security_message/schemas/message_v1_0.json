@@ -1,0 +1,167 @@
+{
+  "title": "ASC for IoT Security Message Schema",
+  "$id": "message_v1_0.json",
+
+  "description": "A list of security events",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+
+  "type": "object",
+  "properties": {
+    "AgentVersion": {
+      "description": "Agent version",
+      "type": "string",
+      "examples": ["1.0.0"]
+    },
+    "AgentId": {
+      "description": "Unique GUID for the agent",
+      "$ref": "#/definitions/guid"
+    },
+    "MessageSchemaVersion": {
+      "description": "Message schema version",
+      "type": "string",
+      "enum": ["1.0"]
+    },
+    "Events": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "description": "A single event",
+
+            "allOf": [
+              {
+                "description": "A single generic event",
+                "type": "object",
+                "properties": {
+                  "Id": { "$ref": "#/definitions/guid" },
+                  "TimestampLocal": { "$ref": "#/definitions/datetime" },
+                  "TimestampUTC": { "$ref": "#/definitions/datetime" },
+
+                  "Category": {
+                    "description": "Event category",
+                    "type": "string",
+                    "enum": ["Periodic", "Triggered"]
+                  },
+                  "Name": {
+                    "description": "Event type",
+                    "type": "string"
+                  },
+                  "EventType": {
+                    "description": "The type of the event",
+                    "type": "string",
+                    "enum": ["Security", "Operational", "Diagnostic"]
+                  },
+                  "IsEmpty": {
+                    "description": "true if the event does not contain any payload",
+                    "type": "boolean"
+                  },
+                  "PayloadSchemaVersion": {
+                    "description": "Event type schema version",
+                    "type": "string"
+                  },
+                  "Payload": {
+                    "description": "Array to contain event data",
+                    "type": "array"
+                  }
+                },
+                "additionalProperties": false,
+                "required": ["Id", "TimestampLocal", "TimestampUTC", "Category", "Name", "EventType", "IsEmpty", "PayloadSchemaVersion", "Payload"]
+              },
+              {
+                "oneOf" : [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "Category": {
+                        "enum": ["Periodic"]
+                      },
+                      "IsEmpty": {
+                        "enum": [true]
+                      },
+                      "Payload": {
+                        "type": "array",
+                        "minItems": 0
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "Category": {
+                        "enum": ["Periodic"]
+                      },
+                      "IsEmpty": {
+                        "enum": [false]
+                      },
+                      "Payload": {
+                        "type": "array",
+                        "minItems": 1
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "Category": {
+                        "enum": ["Triggered"]
+                      },
+                      "IsEmpty": {
+                        "enum": [false]
+                      },
+                      "Payload": {
+                        "type": "array",
+                        "minItems": 1
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "description": "Event categories and types",
+                "oneOf": [
+                  { "$ref": "messageEventSecurityConnectionCreate_v1_0.json#" },
+                  { "$ref": "messageEventSecurityLogin_v1_0.json#" },
+                  { "$ref": "messageEventSecurityProcessCreate_v1_0.json#" },
+                  { "$ref": "messageEventSecurityProcessTerminate_v1_0.json#" },
+                  { "$ref": "messageEventSecurityListeningPorts_v1_0.json#" },
+
+                  { "$ref": "messageEventSecurityFirewallConfiguration_v1_0.json#" },
+                  { "$ref": "messageEventSecurityLocalUsers_v1_0.json#" },
+                  { "$ref": "messageEventSecurityConnectedHardware_v1_0.json#" },
+                  { "$ref": "messageEventSecurityOSBaseline_v1_0.json#" },
+                  { "$ref": "messageEventSecuritySystemInformation_v1_0.json#" },
+
+                  { "$ref": "messageEventDiagnostic_v1_0.json#" },
+
+                  { "$ref": "messageOperationalEventConfigurationError_v1_0.json#" },
+                  { "$ref": "messageOperationalEventDroppedEvents_v1_0.json#" },
+                  { "$ref": "messageOperationalEventMessageStatistics_v1_0.json#" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false,
+  "required": ["AgentVersion", "AgentId", "MessageSchemaVersion", "Events"],
+
+  "definitions": {
+    "guid": {
+      "type": "string",
+      "minLength": 36,
+      "maxLength": 36,
+      "examples": ["9c647395-b913-4997-a732-a7fe7303b649"]
+    },
+    "datetime": {
+      "type": "string",
+      "format": "date-time",
+      "examples": ["2018-08-10T11:01:21.000+01:00", "2018-08-10T11:01:21.000Z"]
+    }
+  }
+}
+
+
+

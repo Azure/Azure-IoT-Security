@@ -1,0 +1,48 @@
+{
+  "title": "Security:",
+  "$id": "messageEventSecurityProcessCreate_v1_0.json",
+
+  "type": "object",
+  "properties": {
+    "Category": {"enum": ["Triggered"]},
+    "Name" : {"enum": ["ProcessCreate"]},
+    "EventType": {"enum": ["Security"]},
+    "PayloadSchemaVersion": {"enum": ["1.0"]},
+    "Payload": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Executable": {
+            "description": "The full path of the process executable",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/executable"
+          },
+          "ProcessId": {
+            "description": "The process Id",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/processid"
+          },
+          "ParentProcessId": {
+            "description": "The parent process Id",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/processid"
+          },
+          "UserId": {
+            "description": "The id of the identity under which the process was started",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/userid"
+          },
+          "UserName": {
+            "description": "The name of the identity under which the process was started",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/username"
+          },
+          "CommandLine": {
+            "description": "The command line used to start the process, includes the executable path and arguments",
+            "type": "string",
+            "examples": ["C:\\windows\\system32\\cscript.exe /nologo Microsoft.Windows.Server.OperatingSystem.PercentMemoryUsed.vbs 81291"]
+          },
+          "ExtraDetails": { "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" }
+        },
+        "additionalProperties": false,
+        "required": ["Executable", "ProcessId", "ParentProcessId", "UserId", "CommandLine"]
+      }
+    }
+  }
+}

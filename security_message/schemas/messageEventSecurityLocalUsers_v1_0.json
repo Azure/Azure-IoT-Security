@@ -1,0 +1,42 @@
+{
+  "title": "Security:LocalUsers",
+  "$id": "messageEventSecurityLocalUsers_v1_0.json",
+
+  "type": "object",
+  "properties": {
+    "Category": {"enum": ["Periodic"]},
+    "Name" : {"enum": ["LocalUsers"]},
+    "EventType": {"enum": ["Security"]},
+    "PayloadSchemaVersion": {"enum": ["1.0"]},
+    "Payload": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "GroupIds": {
+            "description": "A ; delimited list of user group ids",
+            "type": "string",
+            "examples": ["0;1", "1", "2"]
+          },
+          "GroupNames": {
+            "description": "A ; delimited list of user group names",
+            "type": "string",
+            "examples": ["root;daemon", "daemon", "sys"]
+          },
+          "UserId": {
+            "description": "User Id",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/userid"
+          },
+          "UserName": {
+            "description": "User name",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/username",
+            "examples": ["root", "nobody", "user"]
+          },
+          "ExtraDetails": { "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" }
+        },
+        "additionalProperties": false,
+        "required": ["GroupIds", "GroupNames", "UserId", "UserName"]
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Arrays of valid and invalid security messages, used for tests",
+  "$id": "test.json",
+
+  "type": "object",
+  "properties": {
+    "valid": {
+      "type": "array",
+      "items": { "$ref": "messageRoot.json#" }
+    },
+    "invalid": {
+      "type": "array",
+      "items": { "not": { "$ref": "messageRoot.json#" } }
+    },
+    "$id": { "type": "string" }
+  },
+  "additionalProperties": false
+}

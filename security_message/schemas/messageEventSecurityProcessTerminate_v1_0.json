@@ -1,0 +1,36 @@
+{
+  "title": "Security:ProcessTerminate",
+  "$id": "messageEventSecurityProcessTerminate_v1_0.json",
+
+  "type": "object",
+  "properties": {
+    "Category": {"enum": ["Triggered"]},
+    "Name" : {"enum": ["ProcessTerminate"]},
+    "EventType": {"enum": ["Security"]},
+    "PayloadSchemaVersion": {"enum": ["1.0"]},
+    "Payload": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Executable": {
+            "description": "The full path of the process executable",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/executable"
+          },
+          "ProcessId": {
+            "description": "The process Id",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/processid"
+          },
+          "ExitStatus": {
+            "description": "The process exit status",
+            "type": "integer",
+            "examples": [123, 0]
+          },
+          "ExtraDetails": { "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" }
+        },
+        "additionalProperties": false,
+        "required": ["Executable", "ProcessId", "ExitStatus"]
+      }
+    }
+  }
+}

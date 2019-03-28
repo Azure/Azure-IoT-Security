@@ -1,0 +1,61 @@
+{
+  "title": "Security:Login",
+  "$id": "messageEventSecurityLogin_v1_0.json",
+
+  "type": "object",
+  "properties": {
+    "Category": {"enum": ["Triggered"]},
+    "Name" : {"enum": ["Login"]},
+    "EventType": {"enum": ["Security"]},
+    "PayloadSchemaVersion": {"enum": ["1.0"]},
+    "Payload": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ProcessId": {
+            "description": "The process Id",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/processid"
+          },
+          "UserId": {
+            "description": "The id of the identity used to login",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/userid"
+          },
+          "UserName": {
+            "description": "The name of the identity used to login",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/username"
+          },
+          "Operation": {
+            "description": "The operation which handled the connection",
+            "type": "string",
+            "examples": ["PAM:authentication", "NTLM"]
+          },
+          "Executable": {
+            "description": "The executable which handled the login",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/executable"
+          },
+          "RemoteAddress": {
+            "description": "The remote host from which the login attempt occur",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/ip"
+          },
+          "RemotePort": {
+            "description": "The remote port from which the login attempt occur",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/port"
+          },
+          "LocalPort": {
+            "description": "The local port to which the login attempt occur",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/port"
+          },
+          "Result": {
+            "type": "string",
+            "enum": ["Fail", "Success"]
+          },
+          "ExtraDetails": { "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" }
+        },
+        "additionalProperties": false,
+        "required": ["ProcessId", "Operation", "Executable", "Result"],
+        "anyOf" : [ { "required" : ["UserId"] }, { "required" : ["UserName"]} ]
+      }
+    }
+  }
+}

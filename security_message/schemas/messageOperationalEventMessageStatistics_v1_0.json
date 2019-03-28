@@ -1,0 +1,37 @@
+{
+  "title": "OperationalEvent: Message statistics",
+  "$id": "messageOperationalEventMessageStatistics_v1_0.json",
+
+  "type": "object",
+  "properties": {
+    "Category": { "enum": [ "Periodic" ] },
+    "Name": { "enum": [ "MessageStatistics" ] },
+    "EventType": { "enum": [ "Operational" ] },
+    "PayloadSchemaVersion": { "enum": [ "1.0" ] },
+    "Payload": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "MessagesSent": {
+            "description": "Total amount of sent messages",
+            "type": "integer"
+          },
+          "MessagesUnder4KB": {
+            "description": "Total amount of small messages, messages that are less than 4Kb",
+            "type": "integer"
+          },
+          "TotalFailed": {
+            "description": "Total amount of failed to send messages",
+            "type": "integer"
+          },
+          "ExtraDetails": {
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails"
+          }
+        },
+        "additionalProperties": false,
+        "required": [ "MessagesSent", "MessagesUnder4KB", "TotalFailed" ]
+      }
+    }
+  }
+}

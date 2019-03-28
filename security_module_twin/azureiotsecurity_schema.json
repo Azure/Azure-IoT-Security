@@ -1,0 +1,114 @@
+{
+    "title": "Azure IoT security module twin configuration schema",
+    "$id": "azureiotsecurity_schema.json",
+    "definitions": {
+        "EventPriority" : {
+            "description": "The priority of the generated event",
+            "type": "string",
+            "enum" : ["Off", "Low", "High"]
+        }
+    }, 
+    "type" : "object",
+    "properties" : {
+        "desired" : {
+            "type" : "object",
+            "properties" : {
+                "azureiot*com^securityAgentConfiguration^1*0*0" : {
+                    "type" : "object",  
+                    "description" : "User defined device agent configurations",
+                    "properties": {    
+                        "highPriorityMessageFrequency" : { 
+                            "description" : "Interval for sending high priority messages in ISO 8601 duration format",
+                            "type": "string",
+                            "pattern" : "^P(?!$)((\\d+Y)|(\\d+\\.\\d+Y$))?((\\d+M)|(\\d+\\.\\d+M$))?((\\d+W)|(\\d+\\.\\d+W$))?((\\d+D)|(\\d+\\.\\d+D$))?(T(?=\\d)((\\d+H)|(\\d+\\.\\d+H$))?((\\d+M)|(\\d+\\.\\d+M$))?(\\d+(\\.\\d+)?S)?)??$",
+                            "default": "PT7M"
+                        },
+                        "lowPriorityMessageFrequency" : {
+                            "description" : "Interval for sending low priority messages in ISO 8601 duration format",
+                            "type": "string",
+                            "pattern" : "^P(?!$)((\\d+Y)|(\\d+\\.\\d+Y$))?((\\d+M)|(\\d+\\.\\d+M$))?((\\d+W)|(\\d+\\.\\d+W$))?((\\d+D)|(\\d+\\.\\d+D$))?(T(?=\\d)((\\d+H)|(\\d+\\.\\d+H$))?((\\d+M)|(\\d+\\.\\d+M$))?(\\d+(\\.\\d+)?S)?)??$",
+                            "default": "PT5H"
+                        }, 
+                        "snapshotFrequency" : {
+                            "description" : "Snapshot taking interval in ISO 8601 duration format",
+                            "type": "string",
+                            "pattern" : "^P(?!$)((\\d+Y)|(\\d+\\.\\d+Y$))?((\\d+M)|(\\d+\\.\\d+M$))?((\\d+W)|(\\d+\\.\\d+W$))?((\\d+D)|(\\d+\\.\\d+D$))?(T(?=\\d)((\\d+H)|(\\d+\\.\\d+H$))?((\\d+M)|(\\d+\\.\\d+M$))?(\\d+(\\.\\d+)?S)?)??$",
+                            "default": "PT13H"
+                        },    
+                        "maxLocalCacheSizeInBytes": {
+                            "description" : "The amount of space allowed to store messages on the device before they get sent",
+                            "type": "integer",      
+                            "default": 2560000,
+                            "minimum" : 8192
+                        },    
+                        "maxMessageSizeInBytes": {  
+                            "description" : "Max message size",    
+                            "type": "integer",      
+                            "default": 204800,
+                            "minimum" : 8192,
+                            "maximum" : 262144    
+                        },    
+                        "eventPriorityConnectedHardware": {          
+                            "$ref": "#/definitions/EventPriority",
+                            "default": "Low"        
+                        },        
+                        "eventPriorityListeningPorts": {          
+                            "$ref": "#/definitions/EventPriority",
+                            "default": "High"        
+                        },        
+                        "eventPriorityProcessCreate": {          
+                            "$ref": "#/definitions/EventPriority",
+                            "default": "Low"        
+                        },        
+                        "eventPriorityProcessTerminate": {          
+                            "$ref": "#/definitions/EventPriority",
+                            "default": "Low"        
+                        },
+                        "eventPrioritySystemInformation": {          
+                            "$ref": "#/definitions/EventPriority",
+                            "default": "Low"        
+                        },       
+                        "eventPriorityLocalUsers": {          
+                            "$ref": "#/definitions/EventPriority",
+                            "default": "High"        
+                        },        
+                        "eventPriorityLogin": {          
+                            "$ref": "#/definitions/EventPriority",
+                            "default": "High"        
+                        },        
+                        "eventPriorityConnectionCreate": {          
+                            "$ref": "#/definitions/EventPriority",
+                            "default": "Low"        
+                        },        
+                        "eventPriorityFirewallConfiguration": {          
+                            "$ref": "#/definitions/EventPriority",
+                            "default": "Low"        
+                        },        
+                        "eventPriorityOSBaseline": {          
+                            "$ref": "#/definitions/EventPriority",
+                            "default": "Low"        
+                        },        
+                        "eventPriorityDiagnostic": {          
+                            "$ref": "#/definitions/EventPriority",      
+                            "default": "Low"        
+                        },
+                        "eventPriorityConfigurationError": {          
+                            "$ref": "#/definitions/EventPriority",      
+                            "default": "Low"        
+                        },
+                        "eventPriorityDroppedEventsStatistics": {          
+                            "$ref": "#/definitions/EventPriority",      
+                            "default": "Low"        
+                        },
+                        "eventPriorityMessageStatistics": {          
+                            "$ref": "#/definitions/EventPriority",      
+                            "default": "Low"        
+                        }  
+                    }
+                }
+            },
+        "required" : ["azureiot*com^securityAgentConfiguration^1*0*0"]
+        }
+    },
+	"required" : ["desired"]
+}

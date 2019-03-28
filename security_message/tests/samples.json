@@ -1,0 +1,638 @@
+{
+  "$id": "samples.json",
+
+  "valid": [
+    {
+      "AgentVersion": "1.0.0",
+      "AgentId": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Periodic",
+          "Name" : "ListeningPorts",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "RemoteAddress": "127.0.0.1",
+              "RemotePort": "500",
+              "LocalAddress": "127.0.0.1",
+              "LocalPort": "80",
+              "Protocol": "TCP"
+            },
+            {
+              "RemoteAddress": "127.0.0.1",
+              "RemotePort": "501",
+              "LocalAddress": "127.0.0.1",
+              "LocalPort": "80",
+              "Protocol": "TCP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AgentVersion": "1.0.0",
+      "AgentId": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Periodic",
+          "Name" : "ListeningPorts",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "LocalPort": "80",
+              "Protocol": "TCP"
+            },
+            {
+              "LocalPort": "80",
+              "Protocol": "TCP",
+              "ExtraDetails": {
+                "SomeKey": "39"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AgentVersion": "1.0.0",
+      "AgentId": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Triggered",
+          "Name" : "ProcessCreate",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "Executable": "script.exe",
+              "ProcessId": 6052,
+              "ParentProcessId": 6051,
+              "UserId": "0",
+              "UserName": "USER$",
+              "CommandLine": "CMND",
+              "ExtraDetails": {
+                "SomeKey": "39"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AgentVersion": "1.0.0",
+      "AgentId": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Triggered",
+          "Name" : "ConnectionCreate",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "Executable": "script.exe",
+              "ProcessId": 6052,
+              "RemoteAddress": "127.0.0.1",
+              "RemotePort": "500",
+              "LocalAddress": "127.0.0.1",
+              "LocalPort": "80",
+              "Direction": "In",
+              "Protocol": "TCP",
+              "ExtraDetails": {
+                "SomeKey": "SomeValue"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AgentVersion": "1.0.0",
+      "AgentId": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Triggered",
+          "Name" : "ProcessCreate",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "Executable": "script.exe",
+              "ProcessId": 6052,
+              "ParentProcessId": 6052,
+              "UserId": "0",
+              "UserName": "USER$",
+              "CommandLine": "CMND",
+              "ExtraDetails": {
+                "SomeKey": "SomeValue"
+              }
+            }
+          ]
+        },
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Triggered",
+          "Name" : "ProcessTerminate",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "Executable": "script.exe",
+              "ProcessId": 6052,
+              "ExitStatus": 0,
+              "ExtraDetails": { "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" }
+            }
+          ]
+        },
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Triggered",
+          "Name" : "ProcessCreate",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "Executable": "script.exe",
+              "ProcessId": 6052,
+              "ParentProcessId": 6052,
+              "UserId": "0",
+              "UserName": "USER$",
+              "CommandLine": "CMND",
+              "ExtraDetails": {
+                "SomeKey": "SomeValue"
+              }
+            }
+          ]
+        },
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Triggered",
+          "Name" : "ConnectionCreate",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "Executable": "script.exe",
+              "ProcessId": 6052,
+              "RemoteAddress": "127.0.0.1",
+              "RemotePort": "500",
+              "LocalAddress": "127.0.0.1",
+              "LocalPort": "80",
+              "Direction": "In",
+              "Protocol": "TCP",
+              "ExtraDetails": {
+                "SomeKey": "SomeValue"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AgentVersion": "1.0.0",
+      "AgentId": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Periodic",
+          "Name" : "ConnectedHardware",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "HardwareCategory": "Multimedia",
+              "HardwareSubCategory": "Audio Codecs",
+              "HardwareName": "msg.acm",
+              "ExtraDetails": {
+                "Manufacturer": "Microsoft Corporation"
+              }
+            },
+            {
+              "HardwareCategory": "Input",
+              "HardwareSubCategory": "Keyboard",
+              "HardwareName": "Microsoft Hardware USB Keyboard",
+              "ExtraDetails": {
+                "Description": "Microsoft Corporation",
+                "Number of Function Keys": "12"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AgentVersion": "1.0.0",
+      "AgentId": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Triggered",
+          "Name" : "Login",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "ProcessId": 6052,
+              "UserId": "0",
+              "UserName": "USER$",
+              "Operation": "PAM:authentication",
+              "Executable": "script.exe",
+              "RemoteAddress": "127.0.0.1",
+              "RemotePort": "22",
+              "LocalPort": "22",
+              "Result": "Success",
+              "ExtraDetails": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AgentVersion": "1.0.0",
+      "AgentId": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Periodic",
+          "Name" : "FirewallConfiguration",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "Priority": 1,
+              "Direction": "In",
+              "ChainName" : "Input",
+              "Application" : "*",
+              "Enabled": true,
+              "Action": "Allow",
+              "SourceAddress": "localhost",
+              "SourcePort": "*",
+              "DestinationAddress": "127.0.0.1",
+              "DestinationPort": "22",
+              "Protocol": "TCP"
+            },
+            {
+              "Priority": 2,
+              "Direction": "In",
+              "ChainName" : "Input",
+              "Application" : "*",
+              "Enabled": true,
+              "Action": "Allow",
+              "SourceAddress": "localhost",
+              "SourcePort": "*",
+              "DestinationAddress": "127.0.0.1",
+              "DestinationPort": "80",
+              "Protocol": "TCP"
+            },
+            {
+              "Priority": 3,
+              "Direction": "In",
+              "ChainName" : "Input",
+              "Application" : "*",
+              "Enabled": true,
+              "Action": "Deny",
+              "SourceAddress": "localhost",
+              "SourcePort": "*",
+              "DestinationAddress": "*",
+              "DestinationPort": "*",
+              "Protocol": "TCP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AgentVersion": "1.0.0",
+      "AgentId": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Periodic",
+          "Name" : "LocalUsers",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "GroupIds": "0",
+              "GroupNames": "root",
+              "UserId": "0",
+              "UserName": "root"
+            },
+            {
+              "GroupIds": "0;1",
+              "GroupNames": "daemon;root",
+              "UserId": "0",
+              "UserName": "daemon"
+            },
+            {
+              "GroupIds": "2",
+              "GroupNames": "nogroup",
+              "UserId": "0",
+              "UserName": "nobody"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AgentVersion": "0.0.1",
+      "AgentId": "ea05af2d-7397-4a1b-9ec7-3dc15e762a69",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Category": "Triggered",
+          "IsEmpty": false,
+          "Name": "Diagnostic",
+          "EventType": "Diagnostic",
+          "PayloadSchemaVersion": "1.0",
+          "Id": "a9fff7f1-44b0-47ee-a2b4-6d07a24c4ccf",
+          "TimestampLocal": "2018-10-09 16:22:50Z",
+          "TimestampUTC": "2018-10-09 13:22:50Z",
+          "Payload": [
+            {
+              "Severity": "Error",
+              "Message": "Test message",
+              "ProcessId": 1234,
+              "ThreadId": 5678
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AgentVersion": "0.0.1",
+      "AgentId": "ea05af2d-7397-4a1b-9ec7-3dc15e762a69",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Category": "Periodic",
+          "IsEmpty": false,
+          "Name": "OSBaseline",
+          "EventType": "Security",
+          "PayloadSchemaVersion": "1.0",
+          "Id": "a9fff7f1-44b0-47ee-a2b4-6d07a24c4ccf",
+          "TimestampLocal": "2018-10-09 16:22:50Z",
+          "TimestampUTC": "2018-10-09 13:22:50Z",
+          "Payload": [
+            {
+              "Description": "Disable support for RDS.",
+              "CceId": "CCE-14027-7",
+              "Result": "Fail",
+              "Error": "Found no files with lines matching '^install\\\\srds' in /etc/modprobe.d/",
+              "Severity": "Warning"
+            },
+            {
+              "Description": "The bluetooth/hidd service should be disabled.",
+              "CceId": "CCE-4355-4",
+              "Result": "Fail",
+              "Error": "Service 'bluetooth' is not disabled",
+              "Severity": "Warning"
+            },
+            {
+              "Description": "File permissions for /etc/anacrontab should be set to root:root 600.",
+              "CceId": "CCE-4304-2",
+              "Result": "Fail",
+              "Error": "File '/etc/anacrontab' has ownership/permissions errors: Mode is '644' but should be '600'",
+              "Severity": "Critical"
+            },
+            {
+              "Description": "SSH must be configured and managed to meet best practices. - '/etc/ssh/sshd_config Protocol = 2'",
+              "CceId": "CCE-4325-7",
+              "Result": "Err",
+              "Error": "open /etc/ssh/sshd_config: no such file or directory",
+              "Severity": "Critical"
+            },
+            {
+              "Description": "SSH must be configured and managed to meet best practices. - '/etc/ssh/sshd_config IgnoreRhosts = yes'",
+              "CceId": "CCE-4030-3",
+              "Result": "Err",
+              "Error": "open /etc/ssh/sshd_config: no such file or directory",
+              "Severity": "Critical"
+            },
+            {
+              "Description": "Emulation of the rsh command through the ssh server should be disabled. - '/etc/ssh/sshd_config RhostsRSAAuthentication = no'",
+              "CceId": "CCE-4475-0",
+              "Result": "Err",
+              "Error": "open /etc/ssh/sshd_config: no such file or directory",
+              "Severity": "Critical"
+            },
+            {
+              "Description": "SSH host-based authentication should be disabled. - '/etc/ssh/sshd_config HostbasedAuthentication = no'",
+              "CceId": "CCE-4370-3",
+              "Result": "Err",
+              "Error": "open /etc/ssh/sshd_config: no such file or directory",
+              "Severity": "Critical"
+            },
+            {
+              "Description": "Remote connections from accounts with empty passwords should be disabled. - '/etc/ssh/sshd_config PermitEmptyPasswords = no'",
+              "CceId": "CCE-3660-8",
+              "Result": "Err",
+              "Error": "open /etc/ssh/sshd_config: no such file or directory",
+              "Severity": "Critical"
+            },
+            {
+              "Description": "Users are not allowed to set environment options for SSH.",
+              "CceId": "CCE-14716-5",
+              "Result": "Err",
+              "Error": "open /etc/ssh/sshd_config: no such file or directory",
+              "Severity": "Warning"
+            },
+            {
+              "Description": "The avahi-daemon service should be disabled.",
+              "CceId": "CCE-4365-3",
+              "Result": "Fail",
+              "Error": "Service 'avahi-daemon' is not disabled",
+              "Severity": "Warning"
+            },
+            {
+              "Description": "The cups service should be disabled.",
+              "CceId": "CCE-4425-5",
+              "Result": "Fail",
+              "Error": "Service 'cups' is not disabled",
+              "Severity": "Warning"
+            },
+            {
+              "Description": "Remove unnecesary accounts",
+              "CceId": "CCE-XXXXX-7",
+              "Result": "Fail",
+              "Error": "File /etc/passwd should not contain lines matching ['^games:']: games:x:5:60:games:/usr/games:/usr/sbin/nologin",
+              "Severity": "Informational"
+            },
+            {
+              "Description": "SSH must be configured and managed to meet best practices. - '/etc/ssh/sshd_config RhostsAuthentication = no'",
+              "CceId": "CCE-4030-3",
+              "Result": "Err",
+              "Error": "open /etc/ssh/sshd_config: no such file or directory",
+              "Severity": "Critical"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AgentVersion": "0.0.1",
+      "AgentId": "ea05af2d-7397-4a1b-9ec7-3dc15e762a69",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Category": "Periodic",
+          "IsEmpty": true,
+          "Name": "OSBaseline",
+          "EventType": "Security",
+          "PayloadSchemaVersion": "1.0",
+          "Id": "a9fff7f1-44b0-47ee-a2b4-6d07a24c4ccf",
+          "TimestampLocal": "2018-10-09 16:22:50Z",
+          "TimestampUTC": "2018-10-09 13:22:50Z",
+          "Payload": []
+        }
+      ]
+    },
+    {
+      "AgentVersion": "0.0.1",
+      "AgentId": "ea05af2d-7397-4a1b-9ec7-3dc15e762a69",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Category": "Periodic",
+          "IsEmpty": false,
+          "Name": "SystemInformation",
+          "EventType": "Security",
+          "PayloadSchemaVersion": "1.0",
+          "Id": "7fddeb54-8ea7-4bd5-a723-bade5bc56fc5",
+          "TimestampLocal": "2018-10-09 19:24:52Z",
+          "TimestampUTC": "2018-10-09 16:24:52Z",
+          "Payload": [
+            {
+              "OSName": "Microsoft Windows 10 Enterprise",
+              "OSVersion": "10.0",
+              "OSVendor": "Microsoft Corporation",
+              "BIOSVersion": "BIOS",
+              "BootDevice": "BOOTDEVICE",
+              "TotalPhysicalMemoryInKB": 1,
+              "FreePhysicalMemoryInKB": 1,
+              "TotalVirtualMemoryInKB": 1,
+              "FreeVirtualMemoryInKB": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "invalid": [
+    "",
+    [],
+    {},
+    {"Events": []},
+    {
+      "AgentVersion": "1.0.0",
+      "AgentId": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Triggered",
+          "Name" : "ProcessCreate",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "Executable": "script.exe",
+              "ProcessId": 6052,
+              "ParentProcessId": 6052,
+              "UserId": "0",
+              "UserName": "USER$",
+              "CommandLine": "CMND",
+              "ExtraDetails": {
+                "SomeKey": 39
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AgentVersion": "1.0.0",
+      "AgentId": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+      "MessageSchemaVersion": "1.0",
+      "Events": [
+        {
+          "Id": "072f3eca-3db0-45ba-8174-fa383bc93caf",
+          "TimestampLocal": "2018-08-10T11:01:21.000+01:00",
+          "TimestampUTC": "2018-08-10T11:01:21.000Z",
+          "Category": "Triggered",
+          "Name" : "ConnectionCreate",
+          "EventType": "Security",
+          "IsEmpty": false,
+          "PayloadSchemaVersion": "1.0",
+          "Payload": [
+            {
+              "Executable": "script.exe",
+              "ProcessId": 6052,
+              "RemoteAddress": "127.0.0.1",
+              "RemotePort": 500,
+              "CommandLine": "CMND",
+              "ExtraDetails": {
+                "SomeKey": "SomeValue"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

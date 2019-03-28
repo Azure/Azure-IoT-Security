@@ -1,0 +1,44 @@
+{
+
+  "title": "Security:ListeningPorts",
+  "$id": "messageEventSecurityListeningPorts_v1_0.json",
+
+  "type": "object",
+  "properties": {
+    "Category": {"enum": ["Periodic"]},
+    "Name" : {"enum": ["ListeningPorts"]},
+    "EventType": {"enum": ["Security"]},
+    "PayloadSchemaVersion": {"enum": ["1.0"]},
+    "Payload": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "RemoteAddress": {
+            "description": "The remote host",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/ip"
+          },
+          "RemotePort": {
+            "description": "The remote port",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/port"
+          },
+          "LocalAddress": {
+            "description": "The local host",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/ip"
+          },
+          "LocalPort": {
+            "description": "The local port",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/port"
+          },
+          "Protocol": {
+            "description": "Rule protocol",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/protocol"
+          },
+          "ExtraDetails": { "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" }
+        },
+        "additionalProperties": false,
+        "required": ["LocalPort", "Protocol"]
+      }
+    }
+  }
+}

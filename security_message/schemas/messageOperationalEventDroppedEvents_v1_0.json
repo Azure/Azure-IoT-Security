@@ -1,0 +1,38 @@
+{
+  "title": "OperationalEvent: Dropped events statistics",
+  "$id": "messageOperationalEventDroppedEvents_v1_0.json",
+
+  "type": "object",
+  "properties": {
+    "Category": { "enum": [ "Periodic" ] },
+    "Name": { "enum": [ "DroppedEventsStatistics" ] },
+    "EventType": { "enum": [ "Operational" ] },
+    "PayloadSchemaVersion": { "enum": [ "1.0" ] },
+    "Payload": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Queue": {
+            "description": "Queue name",
+            "type": "string",
+            "enum": [ "High", "Low" ]
+          },
+          "CollectedEvents": {
+            "description": "Total amount of generated events for the queue",
+            "type": "integer"
+          },
+          "DroppedEvents": {
+            "description": "Total amount of dropped events from the queue",
+            "type": "integer"
+          },
+          "ExtraDetails": {
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails"
+          }
+        },
+        "additionalProperties": false,
+        "required": [ "Queue", "CollectedEvents", "DroppedEvents" ]
+      }
+    }
+  }
+}

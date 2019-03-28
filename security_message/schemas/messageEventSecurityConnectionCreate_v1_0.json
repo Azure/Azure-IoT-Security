@@ -1,0 +1,65 @@
+{
+
+  "title": "Security:ConnectionCreate",
+  "$id": "messageEventSecurityConnectionCreate_v1_0.json",
+
+  "type": "object",
+  "properties": {
+    "Category": {"enum": ["Triggered"]},
+    "Name" : {"enum": ["ConnectionCreate"]},
+    "EventType": {"enum": ["Security"]},
+    "PayloadSchemaVersion": {"enum": ["1.0"]},
+    "Payload": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "RemoteAddress": {
+            "description": "The remote host",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/ip"
+          },
+          "RemotePort": {
+            "description": "The remote port",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/port"
+          },
+          "LocalAddress": {
+            "description": "The local host",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/ip"
+          },
+          "LocalPort": {
+            "description": "The local port",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/port"
+          },
+          "Direction": {
+            "description": "The connection direction",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/direction"
+          },
+          "Protocol": {
+            "description": "Rule protocol",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/protocol"
+          },
+          "ProcessId": {
+            "description": "The process Id which handled the connection",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/processid"
+          },
+          "UserId": {
+            "description": "The id of the user under which the process was started",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/userid"
+          },
+          "Executable": {
+            "description": "The executable which handled the login",
+            "$ref": "messageEventTypeDefinitions_v1_0.json#/executable"
+          },
+          "CommandLine": {
+            "description": "The command line used to start the connection, includes the executable and arguments",
+            "type": "string",
+            "examples": [ "curl http://google.com" ]
+          },
+          "ExtraDetails": { "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" }
+        },
+        "additionalProperties": false,
+        "required": ["RemoteAddress", "RemotePort", "Direction", "Protocol", "ProcessId", "Executable"]
+      }
+    }
+  }
+}

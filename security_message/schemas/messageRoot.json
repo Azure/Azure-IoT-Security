@@ -1,0 +1,8 @@
+{
+  "title": "ASC for IoT Security Message Schema",
+  "description": "versioned securityMessage",
+  "$id": "messageRoot.json",
+  "oneOf": [
+    { "$ref": "message_v1_0.json#" }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+    "title": "OperationalEvent: Configuration error",
+    "$id": "messageOperationalEventConfigurationError_v1_0.json",
+ 
+    "type": "object",
+    "properties": {
+      "Category": {"enum": ["Triggered"]},
+      "Name" : {"enum": ["ConfigurationError"]},
+      "EventType": {"enum": ["Operational"]},
+      "PayloadSchemaVersion": {"enum": ["1.0"]},
+      "Payload": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "ConfigurationName": {
+              "description": "The name of the configuration that caused an error",
+              "type" : "string"
+            },
+            "ErrorType": {
+              "description": "Error type",
+              "enum" : ["TypeMismatch", "NotOptimal", "Conflict"]
+            },
+            "UsedConfiguration": {
+              "description": "The configuration used by the agent",
+              "type" : "string"
+            },
+            "Message": {
+              "description": "Error details",
+              "type" : "string"
+            },
+            "ExtraDetails": { 
+                "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" 
+            }
+          },
+          "additionalProperties": false,
+          "required": ["ConfigurationName", "ErrorType", "UsedConfiguration", "Message"]
+        }
+      }
+    }
+  }
