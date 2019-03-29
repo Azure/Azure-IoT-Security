@@ -5,14 +5,14 @@
 
 ## Samples repository
 
-ATP for IoT provides reference architecture for security agents that log, process, aggregate, and send security data through IoT hub.
+ASC for IoT provides reference architecture for security agents that log, process, aggregate, and send security data through IoT hub.
 Security agents are designed to work in a constrained IoT environment, and are highly customizable in terms of values they provide when compared to the resources they consume.
 
 Security agents support the following IoT solution features:
-- Collect raw security events from the underlying OS (Linux, Windows). To learn more about available security data collectors, see ATP for IoT agent configuration.
+- Collect raw security events from the underlying OS (Linux, Windows). To learn more about available security data collectors, see [ASC for IoT agent configuration](https://aka.ms/iot-security-docs-config).
 - Aggregate raw security events into messages sent through IoT hub.
-- Authenticate with existing device identity, or a dedicated module identity. See Security agent authentication methods to learn more.
-- Configure remotely through use of the atpforiot module twin. To learn more, see Configure an ATP for IoT agent.
+- Authenticate with existing device identity, or a dedicated module identity. See [Security agent authentication methods](https://aka.ms/iot-security-docs-auth) to learn more.
+- Configure remotely through use of the atpforiot module twin. To learn more, see [Configure an ASC for IoT agent](https://aka.ms/iot-security-docs-config).
 
 In this repository, you will find useful scripts and snippets to get your started with ASC for IoT.
 
