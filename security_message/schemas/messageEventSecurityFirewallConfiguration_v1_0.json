@@ -62,14 +62,7 @@
           "ExtraDetails": { "$ref": "messageEventTypeDefinitions_v1_0.json#/extradetails" }
         },
         "additionalProperties": false,
-        "required": ["Enabled", "Action"],
-        "anyOf" : [ 
-         { "required" : ["SourceAddress"]},
-         { "required" : ["SourcePort"]}, 
-         { "required" : ["DestinationPort"]}, 
-         { "required" : ["DestinationAddress"]}, 
-         { "required" : ["Protocol"]}
-        ]
+        "required": ["Enabled", "Action"]
       }
     }
   }
