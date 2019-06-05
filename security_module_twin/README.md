@@ -7,7 +7,7 @@ In this directory, you can find:
 
 - _azureiotsecurity_default.json_ - default values for agent configuration
 - _azureiotsecurity_schema.json_ - schema for security module twin, written in [JSON Schema](https://json-schema.org/) to allow for easy validation
-- _azureiotsecurity_schema_dtdl.json - schema for security module twin, written in DTDL [DTDL](https://github.com/Azure/IoTPlugandPlay)
+- _azureiotsecurity_schema_dtdl.json_ - schema for security module twin, written in DTDL [DTDL](https://github.com/Azure/IoTPlugandPlay)
 - _create_security_module_ - powershell script that creates and populates security module twin for each device in the iot hub
 
 Note:
