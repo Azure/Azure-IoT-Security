@@ -1,0 +1,200 @@
+{
+    "@id": "http://azureiot.com/interfaces/securityAgentConfiguration/1.0.0",
+    "@type": "Interface",
+    "displayName" : "ASC for IoT monitoring agent twin configuration",
+    "description": "defines a schema for all possible agent configurations",
+    "contents": [
+        {
+            "@type": "Property",
+            "name": "highPriorityMessageFrequency",
+            "displayName" : "High Priority Message Frequency",
+            "description" : "Interval for sending high priority messages in ISO 8601 duration format",
+            "schema": "time",
+            "comment" : "Default value: PT7M",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "lowPriorityMessageFrequency",
+            "displayName" : "Low Priority Message Frequency",
+            "description" : "Interval for sending low priority messages in ISO 8601 duration format",
+            "schema": "time",
+            "comment" : "Default value: PT5H",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "snapshotFrequency",
+            "displayName" : "Snapshot Frequency",
+            "description" : "Snapshot taking interval in ISO 8601 duration format",
+            "schema": "time",
+            "comment" : "Default value: PT13H",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "maxLocalCacheSizeInBytes",
+            "displayName" : "Max Local Cache Size In Bytes",
+            "description" : "The amount of space allowed to store messages on the device before they get sent",
+            "displayUnit": "bytes",
+            "schema": "integer",
+            "comment" : "Default value: 2560000, minimum value: 8192",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "maxMessageSizeInBytes",
+            "displayName" : "Max Message Size In Bytes",
+            "description" : "Max message size",
+            "displayUnit": "bytes",
+            "schema": "integer",
+            "comment" : "Default value: 2560000, minimum value: 8192, maximum value: 204800",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPriorityConnectedHardware",
+            "displayName" : "Event Priority - Connected Hardware",
+            "description" : "The priority of Connected Hardware events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: Low",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPriorityListeningPorts",
+            "displayName" : "Event Priority - Listening Ports",
+            "description" : "The priority of Listening Ports events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: High",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPriorityProcessCreate",
+            "displayName" : "Event Priority - Process Create",
+            "description" : "The priority of Process Create events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: Low",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPriorityProcessTerminate",
+            "displayName" : "Event Priority - Process Terminate",
+            "description" : "The priority of Process Terminate events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: Low",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPrioritySystemInformation",
+            "displayName" : "Event Priority - System Information",
+            "description" : "The priority of System Information events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: Low",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPriorityLocalUsers",
+            "displayName" : "Event Priority - Local Users",
+            "description" : "The priority of Local Users events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: High",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPriorityLogin",
+            "displayName" : "Event Priority - Login",
+            "description" : "The priority of Login events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: High",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPriorityConnectionCreate",
+            "displayName" : "Event Priority - Connection Create",
+            "description" : "The priority of Connection Create events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: Low",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPriorityFirewallConfiguration",
+            "displayName" : "Event Priority - Firewall Configuration",
+            "description" : "The priority of Firewall Configuration events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: Low",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPriorityOSBaseline",
+            "displayName" : "Event Priority - OS Baseline",
+            "description" : "The priority of OS Baseline events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: Low",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPriorityDiagnostic",
+            "displayName" : "Event Priority - Diagnostic",
+            "description" : "The priority of Diagnostic events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: Low, Agent operational event",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPriorityConfigurationError",
+            "displayName" : "Event Priority - Configuration Error",
+            "description" : "The priority of Configuration Error events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: Low, Agent operational event",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPriorityDroppedEventsStatistics",
+            "displayName" : "Event Priority - Dropped Events Statistics",
+            "description" : "The priority of Dropped Events Statistics events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: Low, Agent operational event",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "eventPriorityMessageStatistics",
+            "displayName" : "Event Priority - Message Statistics",
+            "description" : "The priority of Message Statistics events",
+            "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "comment" : "Default value: Low, Agent operational event",
+            "writable" : "true"
+        }
+    ],
+    "schemas": [
+        {
+            "@id" : "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "@type" : "Enum",
+            "enumValues": [
+                {
+                    "name": "High",
+                    "displayName" : "High",
+                    "enumValue": "High"
+                },
+                {
+                    "name": "Low",
+                    "displayName" : "Low",
+                    "enumValue": "Low"
+                }
+            ]
+        }
+    ],
+    "@context": "http://azureiot.com/v0/contexts/Interface.json"
+}
