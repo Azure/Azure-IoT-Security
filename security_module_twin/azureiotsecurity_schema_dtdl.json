@@ -12,7 +12,7 @@
             "description" : "Interval for sending high priority messages in ISO 8601 duration format",
             "schema": "time",
             "comment" : "Default value: PT7M",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -21,7 +21,7 @@
             "description" : "Interval for sending low priority messages in ISO 8601 duration format",
             "schema": "time",
             "comment" : "Default value: PT5H",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -30,7 +30,7 @@
             "description" : "Snapshot taking interval in ISO 8601 duration format",
             "schema": "time",
             "comment" : "Default value: PT13H",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -40,7 +40,7 @@
             "displayUnit": "bytes",
             "schema": "integer",
             "comment" : "Default value: 2560000, minimum value: 8192",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -50,7 +50,7 @@
             "displayUnit": "bytes",
             "schema": "integer",
             "comment" : "Default value: 2560000, minimum value: 8192, maximum value: 204800",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -59,7 +59,7 @@
             "description" : "The priority of Connected Hardware events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: Low",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -68,7 +68,7 @@
             "description" : "The priority of Listening Ports events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: High",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -77,7 +77,7 @@
             "description" : "The priority of Process Create events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: Low",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -86,7 +86,7 @@
             "description" : "The priority of Process Terminate events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: Low",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -95,7 +95,7 @@
             "description" : "The priority of System Information events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: Low",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -104,7 +104,7 @@
             "description" : "The priority of Local Users events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: High",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -113,7 +113,7 @@
             "description" : "The priority of Login events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: High",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -122,7 +122,7 @@
             "description" : "The priority of Connection Create events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: Low",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -131,7 +131,7 @@
             "description" : "The priority of Firewall Configuration events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: Low",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -140,7 +140,7 @@
             "description" : "The priority of OS Baseline events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: Low",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -149,7 +149,7 @@
             "description" : "The priority of Diagnostic events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: Low, Agent operational event",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -158,7 +158,7 @@
             "description" : "The priority of Configuration Error events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: Low, Agent operational event",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -167,7 +167,7 @@
             "description" : "The priority of Dropped Events Statistics events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: Low, Agent operational event",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -176,7 +176,7 @@
             "description" : "The priority of Message Statistics events",
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: Low, Agent operational event",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -184,8 +184,8 @@
             "displayName" : "Enable process create event aggregation",
             "description" : "Enables disables event agrregation for process create",
             "schema": "boolean",
-            "comment" : "true",
-            "writable" : "true"
+            "comment" : "Default value: true",
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -194,7 +194,7 @@
             "description" : "Aggregation interval (time windows) for process create events",
             "schema": "time",
             "comment" : "Default value: PT1H",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -202,8 +202,8 @@
             "displayName" : "Enable connevtion create event aggregation",
             "description" : "Enables disables event agrregation for connection create",
             "schema": "boolean",
-            "comment" : "true",
-            "writable" : "true"
+            "comment" : "Default value: true",
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -212,7 +212,7 @@
             "description" : "Aggregation interval (time windows) for connection create events",
             "schema": "time",
             "comment" : "Default value: PT1H",
-            "writable" : "true"
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -220,8 +220,8 @@
             "displayName" : "Enable Process terminate event aggregation",
             "description" : "Enables disables event agrregation for process terminate",
             "schema": "boolean",
-            "comment" : "true",
-            "writable" : "true"
+            "comment" : "Default value: true",
+            "writable" : true
         },
         {
             "@type": "Property",
@@ -230,7 +230,7 @@
             "description" : "Aggregation interval (time windows) for process terminate events",
             "schema": "time",
             "comment" : "Default value: PT1H",
-            "writable" : "true"
+            "writable" : true
         }
     ],
     "schemas": [
