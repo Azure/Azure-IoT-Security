@@ -1,0 +1,48 @@
+{
+    "description": "Custom type definitions",
+    "$id": "azureiotsecurity_schema_definitions.json",
+    "definitions": {
+        "EventPriorityConfiguration" : {
+            "description": "The priority of the generated event",
+            "type" : "object",
+            "properties" : {
+                "value" : {
+                    "description" : "configuration value",
+                    "type" : "string",
+                    "enum" : ["Off", "Low", "High"]
+                }
+            }
+        },
+        "TimeConfiguration" : { 
+            "description" : "Time (interval) value configuration",
+            "type" : "object",
+            "properties" : {
+                "value" : {
+                    "type": "string",
+                    "description" : "the value of the configuration, ISO8601 format",
+                    "pattern" : "^P(?!$)((\\d+Y)|(\\d+\\.\\d+Y$))?((\\d+M)|(\\d+\\.\\d+M$))?((\\d+W)|(\\d+\\.\\d+W$))?((\\d+D)|(\\d+\\.\\d+D$))?(T(?=\\d)((\\d+H)|(\\d+\\.\\d+H$))?((\\d+M)|(\\d+\\.\\d+M$))?(\\d+(\\.\\d+)?S)?)??$"
+                }
+            }
+        },
+        "IntegerConfiguration" : { 
+            "description" : "Integer value configuration",
+            "type" : "object",
+            "properties" : {
+                "value" : {
+                    "type": "integer",
+                    "description" : "the value of the configuration, integer"
+                }
+            }
+        },
+        "BooleanConfiguration" : { 
+            "description" : "Boolean value configuration",
+            "type" : "object",
+            "properties" : {
+                "value" : {
+                    "type": "boolean",
+                    "description" : "the value of the configuration, boolean"
+                }
+            }
+        }
+    }
+}

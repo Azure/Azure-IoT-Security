@@ -1,5 +1,6 @@
 {
-    "@id": "http://azureiot.com/interfaces/securityAgentConfiguration/1.0.0",
+    "@id": "urn:azureiot:Security:SecurityAgentConfiguration:1",
+    "name" : "urn_azureiot_Security_SecurityAgentConfiguration",
     "@type": "Interface",
     "displayName" : "ASC for IoT monitoring agent twin configuration",
     "description": "defines a schema for all possible agent configurations",
@@ -176,12 +177,67 @@
             "schema": "http://azureiot.com/schemas/EventPriority/1.0.0",
             "comment" : "Default value: Low, Agent operational event",
             "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "aggregationEnabledProcessCreate",
+            "displayName" : "Enable process create event aggregation",
+            "description" : "Enables disables event agrregation for process create",
+            "schema": "boolean",
+            "comment" : "true",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "aggregationIntervalProcessCreate",
+            "displayName" : "Aggregation interval for process create events",
+            "description" : "Aggregation interval (time windows) for process create events",
+            "schema": "time",
+            "comment" : "Default value: PT1H",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "aggregationEnabledConnectionCreate",
+            "displayName" : "Enable connevtion create event aggregation",
+            "description" : "Enables disables event agrregation for connection create",
+            "schema": "boolean",
+            "comment" : "true",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "aggregationIntervalConnectionCreate",
+            "displayName" : "Aggregation interval for connection create events",
+            "description" : "Aggregation interval (time windows) for connection create events",
+            "schema": "time",
+            "comment" : "Default value: PT1H",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "aggregationEnabledProcessTerminate",
+            "displayName" : "Enable Process terminate event aggregation",
+            "description" : "Enables disables event agrregation for process terminate",
+            "schema": "boolean",
+            "comment" : "true",
+            "writable" : "true"
+        },
+        {
+            "@type": "Property",
+            "name": "aggregationIntervalProcessTerminate",
+            "displayName" : "Aggregation interval for process terminate events",
+            "description" : "Aggregation interval (time windows) for process terminate events",
+            "schema": "time",
+            "comment" : "Default value: PT1H",
+            "writable" : "true"
         }
     ],
     "schemas": [
         {
-            "@id" : "http://azureiot.com/schemas/EventPriority/1.0.0",
+            "@id" : "urn:azureiot:Security:Eventpriority:1",
             "@type" : "Enum",
+            "valueSchema":"string",
             "enumValues": [
                 {
                     "name": "High",
@@ -196,5 +252,5 @@
             ]
         }
     ],
-    "@context": "http://azureiot.com/v0/contexts/Interface.json"
+    "@context": "http://azureiot.com/v1/contexts/Interface.json"
 }
