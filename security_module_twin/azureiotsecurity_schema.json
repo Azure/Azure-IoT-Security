@@ -28,8 +28,7 @@
                         "maxLocalCacheSizeInBytes": {
                             "description" : "The amount of space allowed to store messages on the device before they get sent, minimum 8192",
                             "$ref": "azureiotsecurity_schema_definitions.json#/definitions/IntegerConfiguration",
-                            "default": 2560000,
-                            "minimum" : 8192
+                            "default": 2560000
                         },    
                         "maxMessageSizeInBytes": {  
                             "description" : "Max message size, minimum 8192, maximum 262144",    
