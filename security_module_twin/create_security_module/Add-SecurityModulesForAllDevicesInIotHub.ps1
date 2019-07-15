@@ -26,7 +26,7 @@ param
 # CONSTANTS
 #######################################################################################################################################
 $SECURITY_MODULE_NAME = "azureiotsecurity"
-$AGENT_CONFIGURATION_SECTION_NAME = "azureiot*com^securityAgentConfiguration^1*0*0"
+$AGENT_CONFIGURATION_SECTION_NAME = "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration"
 
 #######################################################################################################################################
 # HELPER FUNCTIONS

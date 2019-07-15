@@ -2,7 +2,7 @@
   "moduleId": "azureiotsecurity",
   "properties": {
     "desired": {
-      "azureiot*com^securityAgentConfiguration^1*0*0": {
+      "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration": {
         "highPriorityMessageFrequency": {
           "value": "PT7M"
         },
