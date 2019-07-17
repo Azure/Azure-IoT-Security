@@ -26,11 +26,17 @@ param
 # CONSTANTS
 #######################################################################################################################################
 $SECURITY_MODULE_NAME = "azureiotsecurity"
-$AGENT_CONFIGURATION_SECTION_NAME = "azureiot*com^securityAgentConfiguration^1*0*0"
+$AGENT_CONFIGURATION_SECTION_NAME = "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration"
 
 #######################################################################################################################################
 # HELPER FUNCTIONS
 #######################################################################################################################################
+function CreateConfigurationObject($value) {
+    return @{
+        "value" = $value
+    };
+}
+
 function ParseConnectionString($connectionString) {
     if (!($connectionString -match "HostName=([^;]*);SharedAccessKeyName=([^;]*);SharedAccessKey=([^;]*)")) {
         throw "Invalid connection string '$connectionString'. Please enter a connection string in the format of 'HostName=[HostName];SharedAccessKeyName=[SharedAccessKeyName];SharedAccessKey=[SharedAccessKey]'"
@@ -104,25 +110,31 @@ function CreateAndPopulateSecurityModuleForDevice($deviceId, $hubUri, $token) {
         properties = @{
             desired = @{
                 $AGENT_CONFIGURATION_SECTION_NAME = @{
-                    highPriorityMessageFrequency = "PT7M"
-                    lowPriorityMessageFrequency = "PT5H"
-                    snapshotFrequency = "PT13H"
-                    maxLocalCacheSizeInBytes = "2560000"
-                    maxMessageSizeInBytes = "204800"
-                    eventPriorityConnectedHardware = "Low"
-                    eventPriorityListeningPorts = "High"
-                    eventPriorityProcessCreate = "Low"
-                    eventPriorityProcessTerminate = "Low"
-                    eventPrioritySystemInformation = "Low"
-                    eventPriorityLocalUsers = "High"
-                    eventPriorityLogin = "High"
-                    eventPriorityConnectionCreate = "Low"
-                    eventPriorityFirewallConfiguration = "Low"
-                    eventPriorityOSBaseline = "Low"
-                    eventPriorityDiagnostic = "Low"
-                    eventPriorityConfigurationError = "Low"
-                    eventPriorityDroppedEventsStatistics = "Low"
-                    eventPriorityMessageStatistics = "Low"
+                    highPriorityMessageFrequency = CreateConfigurationObject -value "PT7M"
+                    lowPriorityMessageFrequency = CreateConfigurationObject -value "PT5H"
+                    snapshotFrequency = CreateConfigurationObject -value "PT13H"
+                    maxLocalCacheSizeInBytes = CreateConfigurationObject  -value 2560000
+                    maxMessageSizeInBytes = CreateConfigurationObject -value 204800
+                    eventPriorityConnectedHardware = CreateConfigurationObject -value "Low"
+                    eventPriorityListeningPorts = CreateConfigurationObject -value "High"
+                    eventPriorityProcessCreate =  CreateConfigurationObject -value "Low"
+                    eventPriorityProcessTerminate =  CreateConfigurationObject -value "Low"
+                    eventPrioritySystemInformation = CreateConfigurationObject -value "Low"
+                    eventPriorityLocalUsers = CreateConfigurationObject -value "High"
+                    eventPriorityLogin = CreateConfigurationObject -value "High"
+                    eventPriorityConnectionCreate = CreateConfigurationObject -value "Low" 
+                    eventPriorityFirewallConfiguration = CreateConfigurationObject -value "Low"
+                    eventPriorityOSBaseline = CreateConfigurationObject -value "Low"
+                    eventPriorityDiagnostic = CreateConfigurationObject -value "Low"
+                    eventPriorityConfigurationError = CreateConfigurationObject -value "Low"
+                    eventPriorityDroppedEventsStatistics = CreateConfigurationObject -value "Low"
+                    eventPriorityMessageStatistics = CreateConfigurationObject -value "Low"
+                    aggregationEnabledProcessCreate = CreateConfigurationObject -value $true
+                    aggregationIntervalProcessCreate = CreateConfigurationObject -value "PT1H"
+                    aggregationEnabledConnectionCreate = CreateConfigurationObject -value $true
+                    aggregationIntervalConnectionCreate = CreateConfigurationObject -value "PT1H"
+                    aggregationEnabledProcessTerminate = CreateConfigurationObject -value $true
+                    aggregationIntervalProcessTerminate =CreateConfigurationObject -value "PT1H"
                 }
             }    
         }

@@ -1,113 +1,129 @@
 {
     "title": "Azure IoT security module twin configuration schema",
     "$id": "azureiotsecurity_schema.json",
-    "definitions": {
-        "EventPriority" : {
-            "description": "The priority of the generated event",
-            "type": "string",
-            "enum" : ["Off", "Low", "High"]
-        }
-    }, 
     "type" : "object",
     "properties" : {
         "desired" : {
             "type" : "object",
             "properties" : {
-                "azureiot*com^securityAgentConfiguration^1*0*0" : {
+                "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration" : {
                     "type" : "object",  
                     "description" : "User defined device agent configurations",
                     "properties": {    
                         "highPriorityMessageFrequency" : { 
                             "description" : "Interval for sending high priority messages in ISO 8601 duration format",
-                            "type": "string",
-                            "pattern" : "^P(?!$)((\\d+Y)|(\\d+\\.\\d+Y$))?((\\d+M)|(\\d+\\.\\d+M$))?((\\d+W)|(\\d+\\.\\d+W$))?((\\d+D)|(\\d+\\.\\d+D$))?(T(?=\\d)((\\d+H)|(\\d+\\.\\d+H$))?((\\d+M)|(\\d+\\.\\d+M$))?(\\d+(\\.\\d+)?S)?)??$",
-                            "default": "PT7M"
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/TimeConfiguration",
+                            "default": "PT7M"        
                         },
                         "lowPriorityMessageFrequency" : {
                             "description" : "Interval for sending low priority messages in ISO 8601 duration format",
-                            "type": "string",
-                            "pattern" : "^P(?!$)((\\d+Y)|(\\d+\\.\\d+Y$))?((\\d+M)|(\\d+\\.\\d+M$))?((\\d+W)|(\\d+\\.\\d+W$))?((\\d+D)|(\\d+\\.\\d+D$))?(T(?=\\d)((\\d+H)|(\\d+\\.\\d+H$))?((\\d+M)|(\\d+\\.\\d+M$))?(\\d+(\\.\\d+)?S)?)??$",
-                            "default": "PT5H"
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/TimeConfiguration",
+                            "default": "PT5H"        
                         }, 
                         "snapshotFrequency" : {
                             "description" : "Snapshot taking interval in ISO 8601 duration format",
-                            "type": "string",
-                            "pattern" : "^P(?!$)((\\d+Y)|(\\d+\\.\\d+Y$))?((\\d+M)|(\\d+\\.\\d+M$))?((\\d+W)|(\\d+\\.\\d+W$))?((\\d+D)|(\\d+\\.\\d+D$))?(T(?=\\d)((\\d+H)|(\\d+\\.\\d+H$))?((\\d+M)|(\\d+\\.\\d+M$))?(\\d+(\\.\\d+)?S)?)??$",
-                            "default": "PT13H"
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/TimeConfiguration",
+                            "default": "PT13H"        
                         },    
                         "maxLocalCacheSizeInBytes": {
-                            "description" : "The amount of space allowed to store messages on the device before they get sent",
-                            "type": "integer",      
-                            "default": 2560000,
-                            "minimum" : 8192
+                            "description" : "The amount of space allowed to store messages on the device before they get sent, minimum 8192",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/IntegerConfiguration",
+                            "default": 2560000
                         },    
                         "maxMessageSizeInBytes": {  
-                            "description" : "Max message size",    
-                            "type": "integer",      
-                            "default": 204800,
-                            "minimum" : 8192,
-                            "maximum" : 262144    
+                            "description" : "Max message size, minimum 8192, maximum 262144",    
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/IntegerConfiguration",
+                            "default": 204800
                         },    
                         "eventPriorityConnectedHardware": {          
-                            "$ref": "#/definitions/EventPriority",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",
                             "default": "Low"        
                         },        
                         "eventPriorityListeningPorts": {          
-                            "$ref": "#/definitions/EventPriority",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",
                             "default": "High"        
                         },        
                         "eventPriorityProcessCreate": {          
-                            "$ref": "#/definitions/EventPriority",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",
                             "default": "Low"        
                         },        
                         "eventPriorityProcessTerminate": {          
-                            "$ref": "#/definitions/EventPriority",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",
                             "default": "Low"        
                         },
                         "eventPrioritySystemInformation": {          
-                            "$ref": "#/definitions/EventPriority",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",
                             "default": "Low"        
                         },       
                         "eventPriorityLocalUsers": {          
-                            "$ref": "#/definitions/EventPriority",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",
                             "default": "High"        
                         },        
                         "eventPriorityLogin": {          
-                            "$ref": "#/definitions/EventPriority",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",
                             "default": "High"        
                         },        
                         "eventPriorityConnectionCreate": {          
-                            "$ref": "#/definitions/EventPriority",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",
                             "default": "Low"        
                         },        
                         "eventPriorityFirewallConfiguration": {          
-                            "$ref": "#/definitions/EventPriority",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",
                             "default": "Low"        
                         },        
                         "eventPriorityOSBaseline": {          
-                            "$ref": "#/definitions/EventPriority",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",
                             "default": "Low"        
                         },        
                         "eventPriorityDiagnostic": {          
-                            "$ref": "#/definitions/EventPriority",      
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",      
                             "default": "Low"        
                         },
                         "eventPriorityConfigurationError": {          
-                            "$ref": "#/definitions/EventPriority",      
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",      
                             "default": "Low"        
                         },
                         "eventPriorityDroppedEventsStatistics": {          
-                            "$ref": "#/definitions/EventPriority",      
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",      
                             "default": "Low"        
                         },
                         "eventPriorityMessageStatistics": {          
-                            "$ref": "#/definitions/EventPriority",      
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/EventPriorityConfiguration",      
                             "default": "Low"        
+                        },
+                        "aggregationEnabledProcessCreate": {
+                            "description" : "Enables disables event agrregation for process create",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/BooleanConfiguration",      
+                            "default": true
+                        },
+                        "aggregationIntervalProcessCreate": {
+                            "description" : "Aggregation interval (time windows) for process create events",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/TimeConfiguration",      
+                            "default": "PT1H"
+                        },
+                        "aggregationEnabledConnectionCreate": {
+                            "description" : "Enables disables event agrregation for connection create",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/BooleanConfiguration",      
+                            "default": true
+                        },
+                        "aggregationIntervalConnectionCreate": {
+                            "description" : "Aggregation interval (time windows) for connection create events",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/TimeConfiguration",      
+                            "default": "PT1H"
+                        },
+                        "aggregationEnabledProcessTerminate": {
+                            "description" : "Enables disables event agrregation for process terminate",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/BooleanConfiguration",      
+                            "default": true
+                        },
+                        "aggregationIntervalProcessTerminate": {
+                            "description" : "Aggregation interval (time windows) for process terminate events",
+                            "$ref": "azureiotsecurity_schema_definitions.json#/definitions/TimeConfiguration",      
+                            "default": "PT1H"
                         }  
                     }
                 }
-            },
-        "required" : ["azureiot*com^securityAgentConfiguration^1*0*0"]
+            }
         }
     },
 	"required" : ["desired"]

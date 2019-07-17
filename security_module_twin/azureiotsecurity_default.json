@@ -2,29 +2,85 @@
   "moduleId": "azureiotsecurity",
   "properties": {
     "desired": {
-      "azureiot*com^securityAgentConfiguration^1*0*0": {
-        "highPriorityMessageFrequency": "PT7M",
-        "lowPriorityMessageFrequency": "PT5H",
-        "snapshotFrequency": "PT13H",
-        "maxLocalCacheSizeInBytes": 2560000,
-        "maxMessageSizeInBytes": 204800,
-        "eventPriorityConnectedHardware": "Low",
-        "eventPriorityListeningPorts":  "High",
-        "eventPriorityProcessCreate": "Low",
-        "eventPriorityProcessTerminate": "Low",
-        "eventPrioritySystemInformation": "Low",
-        "eventPriorityLocalUsers": "High",
-        "eventPriorityLogin": "High",
-        "eventPriorityConnectionCreate": "Low",
-        "eventPriorityFirewallConfiguration": "Low",
-        "eventPriorityOSBaseline": "Low",
-        "eventPriorityDiagnostic": "Low",
-        "eventPriorityConfigurationError": "Low",
-        "eventPriorityDroppedEventsStatistics": "Low",
-        "eventPriorityMessageStatistics": "Low"
+      "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration": {
+        "highPriorityMessageFrequency": {
+          "value": "PT7M"
+        },
+        "lowPriorityMessageFrequency": {
+          "value": "PT5H"
+        },
+        "snapshotFrequency": {
+          "value": "PT13H"
+        },
+        "maxLocalCacheSizeInBytes": {
+          "value": 2560000
+        },
+        "maxMessageSizeInBytes": {
+          "value": 204800
+        },
+        "eventPriorityConnectedHardware": {
+          "value": "Low"
+        },
+        "eventPriorityListeningPorts": {
+          "value": "High"
+        },
+        "eventPriorityProcessCreate": {
+          "value": "Low"
+        },
+        "eventPriorityProcessTerminate": {
+          "value": "Low"
+        },
+        "eventPrioritySystemInformation": {
+          "value": "Low"
+        },
+        "eventPriorityLocalUsers": {
+          "value": "High"
+        },
+        "eventPriorityLogin": {
+          "value": "High"
+        },
+        "eventPriorityConnectionCreate": {
+          "value": "Low"
+        },
+        "eventPriorityFirewallConfiguration": {
+          "value": "Low"
+        },
+        "eventPriorityOSBaseline": {
+          "value": "Low"
+        },
+        "eventPriorityDiagnostic": {
+          "value": "Low"
+        },
+        "eventPriorityConfigurationError": {
+          "value": "Low"
+        },
+        "eventPriorityDroppedEventsStatistics": {
+          "value": "Low"
+        },
+        "eventPriorityMessageStatistics": {
+          "value": "Low"
+        },
+        "aggregationEnabledProcessCreate": {
+          "value": true
+        },
+        "aggregationIntervalProcessCreate": {
+          "value": "PT1H"
+        },
+        "aggregationEnabledConnectionCreate": {
+          "value": true
+        },
+        "aggregationIntervalConnectionCreate": {
+          "value": "PT1H"
+        },
+        "aggregationEnabledProcessTerminate": {
+          "value": true
+        },
+        "aggregationIntervalProcessTerminate": {
+          "value": "PT1H"
+        }
       }
     }
   }
-},
+}
 
 
