@@ -5,8 +5,8 @@
 
 ## Samples repository
 
-ASC for IoT provides reference architecture for security agents that log, process, aggregate, and send security data through IoT hub.
-Security agents are designed to work in a constrained IoT environment, and are highly customizable in terms of values they provide when compared to the resources they consume.
+Azure Security Center for IoT provides reference architecture for security agents that log, process, aggregate, and send security data through IoT hub.
+Azure IoT security agents are designed to work in a constrained IoT environment, and are highly customizable in terms of values they provide when compared to the resources they consume.
 
 Security agents support the following IoT solution features:
 - Collect raw security events from the underlying OS (Linux, Windows). To learn more about available security data collectors, see [ASC for IoT agent configuration](https://aka.ms/iot-security-docs-config).
@@ -14,7 +14,7 @@ Security agents support the following IoT solution features:
 - Authenticate with existing device identity, or a dedicated module identity. See [Security agent authentication methods](https://aka.ms/iot-security-docs-auth) to learn more.
 - Configure remotely through use of the atpforiot module twin. To learn more, see [Configure an ASC for IoT agent](https://aka.ms/iot-security-docs-config).
 
-In this repository, you will find useful scripts and snippets to get your started with ASC for IoT.
+In this repository, you will find useful scripts and snippets to get your started with Azure Security Center for IoT.
 
 - _security_message_ - supported security event types, event schemas and event samples
 - _securty_module_twin_ - security agent configuration through IoT Hub module twin, twin schema, defaults, and automation scripts
@@ -22,9 +22,9 @@ In this repository, you will find useful scripts and snippets to get your starte
 
 See also,
 
-- ASC for IoT on [Azure Docs](https://aka.ms/iot-security-docs-agents)
-- ASC for IoT security agent reference architecture for C, on [Github](https://aka.ms/iot-security-github-c)
-- ASC for IoT security agent reference architecture for C#, on [Github](https://aka.ms/iot-security-github-cs)
+- Azure Security Center for IoT on [Azure Docs](https://aka.ms/iot-security-docs-agents)
+- Azure Security Center for IoT security agent reference architecture for C, on [Github](https://aka.ms/iot-security-github-c)
+- Azure Security Center for IoT security agent reference architecture for C#, on [Github](https://aka.ms/iot-security-github-cs)
 
 ## Contributing
 
