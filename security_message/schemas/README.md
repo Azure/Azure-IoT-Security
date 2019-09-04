@@ -2,11 +2,11 @@
 
 Security message schema is written in [JSON Schema](https://json-schema.org/) to allow for easy validation.
 
-The following example uses [Ajv](https://github.com/epoberezkin/ajv) to validate a message schema:
+The following example uses [ajv-cli](https://github.com/jessedc/ajv-cli) to validate a message schema:
 
 ```bash
-# install Ajv
-npm install ajv
+# install ajv-cli
+npm install -g ajv-cli
 # validate message schema
 #   replace 'message_to_validate.json' with your message
 ajv validate -s message_to_validate.json -d messageRoot.json -r message*.json --all-errors
