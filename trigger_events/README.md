@@ -4,12 +4,13 @@ This script imitates malicious activity on the device.
 Use the script for end to end validation of the agent.
 
 # Prerequisites
-In order to run the script you need to have netcat installed on your machine 
+In order to run the script you need to have netcat installed on your machine
 you can install it by `sudo apt-get install netcat`
 
 # Usage
 trigger_events.sh | flags
-	--exploit - opens port 8888 on the device and starts listening to it
+	--exploit (?additional ports) - opens and listen to ports 8888 and additional ports on the device
+		additional ports          - number of additional ports. i.e `-e 3` will open ports 8888,8889,8900"
 	--remidiate - closes port 8888 (only if port 8888 was opened with --exploit)
 	--malicious - runs a fake malicious process on the device
 
