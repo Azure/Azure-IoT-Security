@@ -1,8 +1,10 @@
 {
+    
     "title": "Security:Diagnostic",
     "$id": "messageEventDiagnostic_v1_0.json",
     "type": "object",
     "properties": {
+      "IsEmpty": {"boolean": ["false"]},
       "Category": {"enum": ["Triggered"]},
       "Name" : {"enum": ["Diagnostic"]},
       "EventType": {"enum": ["Diagnostic"]},

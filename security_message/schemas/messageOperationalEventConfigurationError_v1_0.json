@@ -4,6 +4,7 @@
  
     "type": "object",
     "properties": {
+      "IsEmpty": {"boolean": ["false"]},
       "Category": {"enum": ["Triggered"]},
       "Name" : {"enum": ["ConfigurationError"]},
       "EventType": {"enum": ["Operational"]},

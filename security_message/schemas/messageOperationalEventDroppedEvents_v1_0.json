@@ -4,6 +4,7 @@
 
   "type": "object",
   "properties": {
+    "IsEmpty": {"boolean": ["false"]},
     "Category": { "enum": [ "Periodic" ] },
     "Name": { "enum": [ "DroppedEventsStatistics" ] },
     "EventType": { "enum": [ "Operational" ] },

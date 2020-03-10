@@ -5,6 +5,7 @@
 
   "type": "object",
   "properties": {
+    "IsEmpty": {"boolean": ["false"]},
     "Category": {"enum": ["Triggered"]},
     "Name" : {"enum": ["ConnectionCreate"]},
     "EventType": {"enum": ["Security"]},
