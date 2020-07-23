@@ -9,7 +9,7 @@ NUMERIC_REGEX='^[0-9]+$'
 
 
 _exploit=0
-_remidiate=0
+_remediate=0
 _malicious=0
 _portsArr=($PORT)
 _portOutput="port$PORT.output"
@@ -21,7 +21,7 @@ usage(){
     echo "$0 | flags"
     echo "--exploit (?additional ports)     - open and listen to ports $PORT and additional ports"
     echo "      additional ports            - number of additional ports. i.e `-e 3` will open ports 8888,8889,8900"
-    echo "--remidiate                       - closes the port and stops listening"
+    echo "--remediate                       - closes the port and stops listening"
     echo "--malicious                       - runs a fake malicious process"
 }
 
@@ -42,8 +42,8 @@ while [ "$1" != "" ]; do
 
             shift
             ;;
-        -r | --remidiate )
-            _remidiate=1
+        -r | --remediate )
+            _remediate=1
             shift
             ;;
         -m | --malicious )
@@ -82,7 +82,7 @@ exploit(){
     return
 }
 
-remidiate(){
+remediate(){
     if [ -f "$TMP_PID_FILE" ]; then
         for pid in `cat $TMP_PID_FILE`
         do
@@ -121,8 +121,8 @@ if [ $_exploit -eq 1 ]; then
     done
 fi
 
-if [ $_remidiate -eq 1 ]; then
-    remidiate
+if [ $_remediate -eq 1 ]; then
+    remediate
 fi
 
 if [ $_malicious -eq 1 ];then
